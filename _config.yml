@@ -1,14 +1,13 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+title: "Mathematical Software Engineering"
+author: Robert D. French
+email: robert@robertdfrench.me
+description: "<strong>Mathematical Software Engineering</strong>: a <a href='http://www.amazon.com/Elements-Programming-Alexander-A-Stepanov/dp/032163537X'>rigorous approach</a> to developing beautiful scientific software focused on <a href='http://en.wikipedia.org/wiki/Template_metaprogramming'>composable algotithms</a>, <a href='http://semver.org'>well-defined APIs</a>, and <a href='http://exceptionalruby.com/'>robust failure handling</a>."
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://www.robertdfrench.me" # the base hostname & protocol for your site
+twitter_username: robertdfrench
+github_username:  robertdfrench
 
 # Build settings
 markdown: kramdown
+highlighter: pygments
