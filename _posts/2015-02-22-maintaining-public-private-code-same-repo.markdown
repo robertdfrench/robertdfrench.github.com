@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Maintaing public and private code in the same repo"
+title:  "Maintaining public and private code in the same repo"
 date:   2015-02-22 10:53:24
 categories: git branch open-source submodule
 ---
