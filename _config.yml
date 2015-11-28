@@ -1,5 +1,5 @@
 # Site settings
-title: "Mathematical Software Engineering"
+title: "Robert D. French"
 author: Robert D. French
 email: robert@robertdfrench.me
 description: "<strong>Mathematical Software Engineering</strong>: a <a href='http://www.amazon.com/Elements-Programming-Alexander-A-Stepanov/dp/032163537X'>rigorous approach</a> to developing beautiful scientific software focused on <a href='http://en.wikipedia.org/wiki/Template_metaprogramming'>composable algotithms</a>, <a href='http://semver.org'>well-defined APIs</a>, and <a href='http://exceptionalruby.com/'>robust failure handling</a>."
