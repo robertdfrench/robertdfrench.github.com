@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <!-- Bout to include head dot aych tee em ell -->
-  {% include head.html %}
+	   {% include head.html %}
+	   <body>
 
-  <body>
+			 <div class="container-fluid">
+				    {% include header.html %}
+				    {{ content }}
+				    {% include footer.html %}
+			 </div>
 
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
+	   </body>
 
 </html>
