@@ -1,6 +1,6 @@
 ---
 layout: page
-title: by Robert French
+title: Bio
 permalink: /about/
 ---
 
