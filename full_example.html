@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	   <head>
+			 <meta charset="utf-8">
+			 <meta name="viewport" content="width=device-width initial-scale=1" />
+			 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+			 <title>Robert D. French</title>
+			 <meta name="description" content="My name is Robert French, and I'm a mathematical software engineer. I like B-Trees, ODEs, and DAGs. I'm currently retooling the user accounting system for [Titan](https://www.olcf.ornl.gov/titan/).">
+
+			 <link rel="canonical" href="http://www.robertdfrench.me/">
+			 <!-- Latest compiled and minified CSS -->
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+			 <!-- Optional theme -->
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	   </head>
+
+	   <body>
+			 <div class="container">
+				<div class="row">
+					<section class="col-md-3">
+						<p>&nbsp;</p>
+						<div class="panel panel-success">
+							<div class="panel-body">
+								 <address>
+									 <strong>Robert D. French</strong><br>
+									 Mathematical Software Engineer<br>
+									 Knoxville, TN<br>
+									 GitHub: <a href="#">robertdfrench</a><br>
+									 LinkedIn: <a href="#">robertdfrench</a>
+								 </address>
+							</div>
+						</div>
+							<nav>
+								<h4 class="page-heading">Cool Things I've Done</h4>
+								<ul>
+									<li><a href="#">Résumé</a></li>
+									<li><a href="#">Tiny Titan</a></li>
+									<li><a href="#">ODE Block Solvers</a></li>
+								</ul>
+
+								<h4 class="page-heading">Recent Posts</h4>
+								<ul>
+								    <li>
+								      <span class="post-meta">Feb 22, 2015</span>
+								   	 <a class="post-link" href="/git/branch/open-source/submodule/2015/02/22/maintaining-public-private-code-same-repo.html">Maintaining public and private code in the same repo</a>
+								    </li>
+								</ul>
+
+								  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+							</nav>
+				    </section>
+				    <section class="col-md-9">
+  
+					   <div class="post">
+					   
+						<header class="post-header">
+						  <h1 class="post-title">Speed Up That Nokogiri Build</h1>
+						  <p class="post-meta"></p>
+						</header>
+					   
+						<article class="post-content">
+						  <p>An important part of continuous integration is making sure that you can rebuild your environment from scratch. Unfortunately for most Rails apps, running <code>bundle install</code> can cause your CI job to hang for several minutes, and <a href="http://www.nokogiri.org/">nokogiri</a> is usually the culprit.</p>
+
+				    <h3 id="dont-rebuild-libxml-from-scratch">Don’t rebuild LibXML from scratch</h3>
+				    <p>The reason it takes so long to install nokogiri is that, by default, it will try to build its own copies of libxml and libxslt, which are huge. That definitely makes initial adoption easier, but now we’re stuck with it, so let’s speed things up a bit.</p>
+
+				    <p>Fortunately, the nokogiri gem takes a <a href="http://www.nokogiri.org/tutorials/installing_nokogiri.html#using_your_system_libraries">build option</a> that tells it to look for system-installed xml and xslt libraries. To get Bundler to use it, we create an entry in the local <a href="http://bundler.io/v1.6/man/bundle-config.1.html">bundler config</a> and then install it like so:</p>
+
+				    <div class="highlight"><pre><code class="language-bash" data-lang="bash">bundle config build.nokogiri --use-system-libraries
+				    bundle install</code></pre></div>
+
+				    <h3 id="clean-up-after-yaself">Clean up after yaself</h3>
+				    <p>The trouble with this approach is that the bundle config is not ephemeral, and if you are running multiple builds on the same Jenkins server, the config will persist and affect other branches. I recommend sticking the following in your <code>test.sh</code> right after your gems are installed:</p>
+
+				    <div class="highlight"><pre><code class="language-bash" data-lang="bash">bundle config --delete build.nokogiri</code></pre></div>
+
+				    <p>Doing this for any specific gem build settings after you run <code>bundle install</code> will make sure that you do not get screwy environment behavior when running future builds.</p>
+
+						</article>
+					   
+					   </div>
+				</section>
+			 </div>
+			 <footer class="row">
+				    <!-- Latest compiled and minified JavaScript -->
+				    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+				    
+				    <!-- MathJax -->
+				    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+			 </footer>
+	   </body>
+</html>
+
