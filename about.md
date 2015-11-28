@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Robert
+title: by Robert French
 permalink: /about/
 ---
 
