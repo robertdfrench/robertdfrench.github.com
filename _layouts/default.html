@@ -1,16 +1,83 @@
 <!DOCTYPE html>
 <html>
-	   {% include head.html %}
+	   <head>
+			 <meta charset="utf-8">
+			 <meta name="viewport" content="width=device-width initial-scale=1" />
+			 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+			 <title>Robert D. French</title>
+			 <meta name="description" content="My name is Robert French, and I'm a mathematical software engineer. I like B-Trees, ODEs, and DAGs. I'm currently retooling the user accounting system for [Titan](https://www.olcf.ornl.gov/titan/).">
+
+			 <link rel="canonical" href="http://www.robertdfrench.me/">
+			 <!-- Latest compiled and minified CSS -->
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+			 <!-- Optional theme -->
+			 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+	   </head>
+
 	   <body>
+			 <div class="container">
+				<div class="row">
+					<section class="col-md-3">
+						<p>&nbsp;</p>
+						<div class="panel panel-success">
+							<div class="panel-body">
+								<div class="row">
+									  <div class="col-md-4">
+									    <img src="assets/profile_square.jpg" class="img-responsive">
+								       </div>
+									  <div class="col-md-8">
+									    <address>
+										    <strong>Robert D. French</strong><br>
+										    Software Engineer<br>
+										    Knoxville, TN<br>
+									    </address>
+								       </div>
+									  <nav class="col-md-12">
+											<ul class="list-inline">
+												   <li><a href="#">GitHub</a></li>
+												   <li><a href="#">LinkedIn</a></li>
+												   <li><a href="#">RSS</a></li>
+												   <li><a href="#">Email</a></li>
+											</ul>
+									  </nav>
+								</div>
+							</div>
+						</div>
+							<nav>
+								<h4 class="page-heading">Cool Things I've Done</h4>
+								<ul>
+									<li><a href="#">Résumé</a></li>
+									<li><a href="#">Tiny Titan</a></li>
+									<li><a href="#">ODE Block Solvers</a></li>
+								</ul>
 
-			 <div class="container-fluid">
-				    {% include header.html %}
-				    <section>
-						  {{ content }}
+								<h4 class="page-heading">Recent Posts</h4>
+								<ul>
+								    <li>
+								      <span class="post-meta">Feb 22, 2015</span>
+								   	 <a class="post-link" href="/git/branch/open-source/submodule/2015/02/22/maintaining-public-private-code-same-repo.html">Maintaining public and private code in the same repo</a>
+								    </li>
+								</ul>
+							</nav>
 				    </section>
-				    {% include footer.html %}
+				    <section class="col-md-9">
+ 					{{ content }} 
+				</section>
 			 </div>
-
+			 <footer class="row">
+				    <!-- Latest compiled and minified JavaScript -->
+				    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+				    
+				    <!-- MathJax -->
+				    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+				    <br>
+				    <br>
+				    <center>
+						  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">This blog</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+				    </center>
+			 </footer>
 	   </body>
-
 </html>
+
