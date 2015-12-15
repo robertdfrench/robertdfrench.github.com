@@ -6,7 +6,7 @@ categories: cors ajax api http header policy browser same-origin
 ---
 You've heard of CORS right? It's that thing that lets you like... make an ajax call to some other site? Or something? Yeah. It can be a bit fuzzy. 
 
-**tl;dr**: If you want a page hosted on `sunnyvale.ca` to call `api.sunnyvale.ca/lots/open`, just make sure the client specifies that it is making a CORS request, and the backend application returns `Access-Control-Allow-Origin: sunnyvale.ca` as part of its headers.
+**tl;dr**: If you want a page hosted on `sunnyvale.ca` to call `api.sunnyvale.ca/lots/open`, just make sure the client specifies that it is making a CORS request, and have the backend application return `Access-Control-Allow-Origin: sunnyvale.ca` as part of its headers.
 
 ### Can't I just make HTTP requests to whatever host I want?
 Well, yes. You can in curl, or some other basic http client. But modern browsers have all agreed to implement a rule that prevent scripts hosted on Site A from making ajax calls to Site B. Just like showing lock icons for sites with valid SSL certificates, this is so-called "same-origin policy" is something browsers do to make consumers safer.
