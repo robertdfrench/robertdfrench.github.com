@@ -12,3 +12,4 @@ github_username:  robertdfrench
 # Build settings
 markdown: kramdown
 highlighter: pygments
+exclude: [vendor]
