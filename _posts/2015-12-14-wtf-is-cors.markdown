@@ -47,7 +47,7 @@ Origin: https://sunnyvale.ca
 Access-Control-Request-Method: GET
 {% endhighlight %}
 
-Recall here that CORS and the same-origin policy are browser-level features. It does no good to write code to discriminate requests based on the Origin header; attackers will lie to you anyhow. We simply need to tell the browser what Origins we expect such calls from. These features are for the user's protection, not yours.
+Recall here that CORS and the same-origin policy are browser-level features. It does no good to write code to discriminate requests based solely on the Origin header; attackers will lie to you anyhow. We simply need to tell the browser what Origins we expect such calls from. These features are for the user's protection, not yours.
 
 #### Step 3 -- Server confirms that it expects CORS requests from sunnyvale.ca
 To allow CORS requests from documents on `sunnyvale.ca`, include the `Access-Control-Allow-Origin` header in your reply, like so:
@@ -68,3 +68,4 @@ Think about sites like GitHub that allow users to manage content on their own su
 ### References
 1. [HTTP Access Control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) -- [Mozilla Developer Network](https://developer.mozilla.org/en-US/).
 1. [CORS W.T.F.?! or 'What is the best way to play with cors locally?'](https://github.com/html5cat/cors-wtf) -- [Yuriy Dybskiy](http://dybskiy.com/).
+1. [Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet) -- [Open Web Application Security Project](https://www.owasp.org/index.php/Main_Page).
