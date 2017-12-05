@@ -4,7 +4,7 @@ title:  "WTF is CORS?"
 date:   2015-12-14 10:53:24
 categories: cors ajax api http header policy browser same-origin
 ---
-You've heard of CORS right? It's that thing that lets you like... make an ajax call to some other site? Or something? Yeah. It can be a bit fuzzy. 
+You've heard of CORS right? It's that thing that lets you like... make an ajax call to some other site? Or something? Yeah. It can be a bit fuzzy...
 
 **tl;dr**: If you want a page hosted on `sunnyvale.ca` to call `api.sunnyvale.ca/lots/open`, just make sure the client specifies that it is making a CORS request, and have the backend application return `Access-Control-Allow-Origin: sunnyvale.ca` as part of its headers.
 
