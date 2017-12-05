@@ -13,3 +13,5 @@ github_username:  robertdfrench
 markdown: kramdown
 highlighter: pygments
 exclude: [vendor]
+
+theme: jekyll-theme-time-machine
